@@ -1,5 +1,5 @@
 FROM registry.fedoraproject.org/fedora:27
-LABEL maintainer="Micah Abbott <miabbott@redhat.com>"
+LABEL maintainer="Michael Nguyen <mnguyen@redhat.com>"
 ENV container=docker
 RUN dnf -y install dnf-plugins-core gcc-g++ git man && \
     dnf -y build-dep ostree rpm-ostree && \
@@ -7,8 +7,8 @@ RUN dnf -y install dnf-plugins-core gcc-g++ git man && \
 
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     echo "Defaults secure_path = /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin" >> /etc/sudoers && \
-    useradd --groups wheel --uid 1000 miabbott
+    useradd --groups wheel --uid 1000 mnguyen
 
-USER miabbott
+USER mnguyen
 CMD ["/bin/bash"]
 

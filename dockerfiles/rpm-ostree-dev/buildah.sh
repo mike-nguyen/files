@@ -1,7 +1,7 @@
 #!/bin/env bash
 set -xeou pipefail
 
-releasever=28
+releasever=29
 
 dnf_cmd() {
   dnf -y --installroot $mp --releasever $releasever $@
@@ -27,7 +27,7 @@ chroot $mp bash -c "/usr/sbin/useradd --groups wheel --uid 9000 tester"
 
 buildah config --user tester $ctr
 
-buildah commit $ctr miabbott/rpm-ostree-devel:$releasever
+buildah commit $ctr mnguyen/rpm-ostree-devel:$releasever
 
 buildah umount $ctr
 buildah rm $ctr
