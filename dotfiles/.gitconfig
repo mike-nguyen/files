@@ -11,9 +11,8 @@
 	conflictstyle=diff3
 	tool = meld
 [user]
-	name = Jonathan Lebon
-	email = jlebon@redhat.com
-	signingkey = 519CE313
+	name = Michael Nguyen
+	email = mnguyen@redhat.com
 [alias]
 	cam = commit -am
 	scrap = reset --hard HEAD

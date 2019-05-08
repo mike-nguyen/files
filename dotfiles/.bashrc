@@ -155,18 +155,18 @@ function stdprompt_dir() { # $1 = dir, $2 = git root
 	fi
 
 	# A tricky bit on atomic-ws here is that the default dir when starting bash
-	# is not $HOME (which is /home/jlebon), but `realpath $HOME`, which is
-	# /var/home/jlebon.  So we need to be able to translate both $HOME and
+	# is not $HOME (which is /home/mnguyen), but `realpath $HOME`, which is
+	# /var/home/mnguyen.  So we need to be able to translate both $HOME and
 	# $(realpath $HOME) into ~.
 
 	# Get the current dir, but abbreviate homedir if present
 	local pwd=$PWD # default to $PWD
 	if [[ $pwd_realpath == $__home_realpath ]]; then
 		pwd='~'
-	# handle /home/jlebon subdir
+	# handle /home/mnguyen subdir
 	elif [[ $PWD == $HOME/* ]]; then
 		pwd='~'${pwd:${#HOME}}
-	# handle /var/home/jlebon subdir
+	# handle /var/home/mnguyen subdir
 	elif [[ $PWD == $__home_realpath/* ]]; then
 		pwd='~'${PWD:${#__home_realpath}}
 	fi
